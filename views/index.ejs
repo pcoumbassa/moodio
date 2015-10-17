@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('head') -%>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <%- include('header') -%>
+      <% if(!user) {%>
+      	<a href="/login">Log in</a>
+      </br>
+      <a href="/register">Register</a>
+      <%}%>
+      <% if(user) {%>
+      You currently logged in as <%= user.username %>
+      <a href="/logout">Log out</a>
+  <%} %>
+      </form>
+    </div>
+  </body>
+</html>

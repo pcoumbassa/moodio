@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('head') -%>
+  </head>
+  <body>
+    <div class="container">
+      <%- include('header') -%>
+    <h1>Create an account</h1>
+    <form role="form" action="/register" method="POST">
+      <div class="form-group">
+        <input class="class-control" type="email" name="username" placeholder='Email', required >
+      </div>
+      <div class="form-group">
+        <input type="password" name="password" placeholder='Password' id="password" required>
+      </div>
+      <div class="form-group">
+        <input type="password" name="confirmpassword" placeholder='Confirm password' id="confirmpassword" required>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-default" type="submit" role="button">Sign up</button>
+      </div>
+    </form>
+    <h4><%= info%></h4>
+  </body>
+</html>

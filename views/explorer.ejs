@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <%- include('head') -%>
+  <body>
+    <%- include('header') -%>
+    <div class="container-fluid">
+    	<h1>Explore audio</h1>
+    	<div class="col-md-2">
+    		<h2>Profil</h2>
+	    	<div id="user">
+	    		<div id="pseudo"><%=user.pseudo%></div>
+	    		<div id="username"><%=user.username%></div>
+	    	</div>
+    	</div>
+    	<div class="col-md-8">
+    		<h2>List of beats</h2>
+			<!--<div class="input-group">
+				<span class="input-group-addon" id="basic-addon2"><i class="material-icons md-18">search</i></span>
+			  	<input type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon2">			  
+			</div>-->
+	    	<ul id="tracklist" class="list-group">
+		    	<%for (var i=0; i<audiolist.length;i++) {%>
+					<li class="list-group-item">
+						<a class="tracklist" role="button">
+							<% var d = audiolist[i]._id.getTimestamp() %>
+							<% var monthNames = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];%>
+							<div class='row'>
+								<div class='col-md-1 text-center'>
+									<i class="material-icons">play_circle_outline</i>
+								</div>
+								<div class='col-md-6'>
+									<div class="first"><%=audiolist[i].title%></div>
+									<div class="second">Composed by <%=audiolist[i].pseudo%></div>
+									<div class="second"><%=d.getDate()%> <%=monthNames[d.getMonth()]%> <%=d.getFullYear()%></div>
+									<div class="caption"><%=audiolist[i].caption%></div>
+									<div class=""><%=audiolist[i].listening%> listening</div>
+									<div class=""><%=audiolist[i].dope%> dope</div>
+								</div>
+								<div class="col-md-1">
+									<div class="info">	
+										<i class="material-icons">favorite</i>
+										<i class="material-icons">add</i>
+									</div>
+								</div>		
+							</div>
+						</a>
+					</li>			
+				<% } %>
+			</ul>
+			<div id="loadMore">Load more</div>
+		</div>
+
+		<div class="col-md-2">
+			<h2>Information</h2>
+	    	<div id="user">
+	    		<div id="">Coming soon</div>
+	    	</div>
+    	</div>
+
+
+	</div>
+	<%- include('playcontrol') -%>
+	<%- include('script') -%>
+  </body>
+
+</html>

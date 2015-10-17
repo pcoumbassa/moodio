@@ -1,0 +1,51 @@
+header {
+	margin-bottom: 50px;
+}
+body {
+  padding: 50px;
+  font: 12px "Roboto", Helvetica, Arial, sans-serif;
+}
+
+#playcontrol{
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   height:30px;
+   width:100%;
+}
+
+.navigation {
+	background-color: #651FFF;
+	color: red;
+}
+
+.list-group-item a{
+	text-decoration: none;
+	color: #651FFF;
+}
+
+.activ{
+	background-color: #F5F5F5;
+}
+
+
+.first{
+	font-size: 14px;
+}
+
+.second{
+	font-size:12px;
+	font-weight: 300;
+	color: gray;
+}
+
+.caption{
+
+	/*border: solid 1px black;*/
+	color: #00BFA5;
+}
+
+.material-icons.md-36 { font-size: 36px; }
+
+.material-icons.md-18 { font-size: 18px; }
+

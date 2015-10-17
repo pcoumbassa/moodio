@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <%- include('head') -%>
+  <body>
+    <%- include('header') -%>
+    <h1>My audio</h1>
+    <p>
+    	<div id="user">
+    		<div id="pseudo"><%=user.pseudo%></div>
+    		<div id="username"><small><%=user.username%></small></div>
+    	</div>
+    	<ul id="tracklist" class="music-container container-fluid list-unstyled list-group">
+	    	<%for (var i=0; i<audiolist.length;i++) {%>
+		    	<%for (var j=0; j<audiolist[i].audio.length;j++) {%>
+
+					<li class="tracklist list-group-item">
+						<a class="" role="button">
+							<div class=""><%=audiolist[i]._id.getTimestamp() %></div>
+							<div class="pseudo"><%=audiolist[i].pseudo%></div>
+							<div class=""><%=audiolist[i].audio[j].title%>
+							</div>
+							<div class=""><%=audiolist[i].audio[j].caption%>
+							</div>
+						</a>
+						<a class="like" role="button">
+							<i class="material-icons">favorite</i>
+						</a>
+						<a class="pin" role="button">
+							<i class="material-icons">add_box</i>
+						</a>
+					</li>			
+
+				<% } %>
+			<% } %>
+		</ul>
+	</p>
+	
+	<div id="loadMore" class="btn btn-default">Load more</div>
+
+	<%- include('playcontrol') -%>
+	<%- include('script') -%>
+  </body>
+
+</html>

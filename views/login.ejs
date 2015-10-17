@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('head') -%>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <%- include('header') -%>
+      <div class="container-fluid">
+        <h1>Log in</h1>
+        <form role="form" action="/login" method="POST">
+          <div class="form-group">
+            <input type="text" name="username" placeholder='Email', required autofocus>
+          </div>
+          <div class="form-group">
+            <input type="password" name="password" placeholder='Password' required>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" name="remember" checked="checked" value="yes">Remember me?
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-default">Sign in</button>
+          </div>
+          <a href="#">Forgot password?</a>
+          <a href="/register">Create an account</a>
+        </div>
+      </form>
+      <%- include('script') -%>
+  </body>
+</html>
