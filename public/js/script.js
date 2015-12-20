@@ -29,7 +29,7 @@ $(document).ready(function () {
 		var audio_title = this.getElementsByTagName('div')[3].innerText;
 		var audio_username = this.getElementsByTagName('div')[4].innerText;
 		var username = document.getElementById('username').innerText;
-		console.log(this.getElementsByTagName('div'));
+		//this.getElementsByTagName('div')[7].innerText = );
 		socket.emit('title', {title: audio_title, audio_username: audio_username, username: username});
 	})
 

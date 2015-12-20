@@ -14,6 +14,8 @@ var Play = require('./models/play');
 var app = express();
 app.io = require('socket.io')();
 var Account = require('./models/account');
+var play = require('play');
+var probe = require('node-ffprobe');
 
 var Player = require('player');
 
@@ -22,14 +24,20 @@ app.io.on('connection', function (socket) {
   var query = Audio.find(null);
 
   var p = new Player('./audio/04 - Often.mp3');
+  /*play.sound('./audio/02-02-13_04_07_ovni3.mp3', function(){
 
+    // these are all "fire and forget", no callback
+    console.log('play!!!');
+
+  });*/
   socket.on('play', function(data){
     p.play();
   });
 
  socket.on('title',function(data) {
     p.stop();
-    p = new Player('./audio/' + data.title + '.mp3');
+    var track = './audio/' + data.title + '.mp3'
+    p = new Player(track);
     p.play();
 
     /*Account.update({pseudo: data.audio_username, audio: {$elemMatch: {title: data.title}}}, {$addToSet:{"audio.$.playBy": { username : data.username}}},function(err){

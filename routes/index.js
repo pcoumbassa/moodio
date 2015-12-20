@@ -4,6 +4,7 @@ var Account = require('../models/account');
 var Audio = require('../models/audio');
 var router = express.Router();
 
+
 router.get('/', function (req, res) {
     res.render('index', { title: 'Home', user : req.user });
 });
@@ -84,7 +85,7 @@ router.get('/login', function(req, res) {
 });
 
 router.post('/login', passport.authenticate('local'), function(req, res) {
-    res.redirect('/explore');
+    res.redirect('/explorer');
 });
 
 router.get('/logout', function(req, res) {
