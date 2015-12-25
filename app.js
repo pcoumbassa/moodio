@@ -14,8 +14,6 @@ var Play = require('./models/play');
 var app = express();
 app.io = require('socket.io')();
 var Account = require('./models/account');
-var play = require('play');
-var probe = require('node-ffprobe');
 
 var Player = require('player');
 
@@ -24,12 +22,7 @@ app.io.on('connection', function (socket) {
   var query = Audio.find(null);
 
   var p = new Player('./audio/04 - Often.mp3');
-  /*play.sound('./audio/02-02-13_04_07_ovni3.mp3', function(){
 
-    // these are all "fire and forget", no callback
-    console.log('play!!!');
-
-  });*/
   socket.on('play', function(data){
     p.play();
   });
